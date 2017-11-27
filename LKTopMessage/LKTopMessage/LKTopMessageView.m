@@ -27,7 +27,13 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.messageLabel.frame = CGRectMake(20, 0, CGRectGetWidth(self.bounds) - 20 * 2, CGRectGetHeight(self.bounds));
+    
+    // 是否是iPhoneX
+    if ([UIScreen mainScreen].bounds.size.width == 375.0f && [UIScreen mainScreen].bounds.size.height == 812.0f) {
+        self.messageLabel.frame = CGRectMake(20, [[UIApplication sharedApplication] statusBarFrame].size.height, CGRectGetWidth(self.bounds) - 20 * 2, CGRectGetHeight(self.bounds) - [[UIApplication sharedApplication] statusBarFrame].size.height);
+    } else {
+        self.messageLabel.frame = CGRectMake(20, 0, CGRectGetWidth(self.bounds) - 20 * 2, CGRectGetHeight(self.bounds));
+    }
 }
 
 - (void)setupView {
@@ -40,7 +46,7 @@
         _messageLabel = [UILabel new];
         _messageLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
         _messageLabel.textColor = [UIColor whiteColor];
-        _messageLabel.numberOfLines = 2;
+        _messageLabel.numberOfLines = 0;
     }
     return _messageLabel;
 }

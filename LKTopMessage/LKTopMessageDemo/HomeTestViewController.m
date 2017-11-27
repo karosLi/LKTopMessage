@@ -74,7 +74,7 @@ static NSArray *testTypes;
     TestType type = [testTypes[indexPath.row][@"type"] integerValue];
     
     if (type == TestTypeSuccess) {
-        [LKTopMessageManager show:@"我是成功"];
+        [LKTopMessageManager show:@"我是成功\n哈哈哈"];
     } else if (type == TestTypeError) {
         [LKTopMessageManager showError:@"我是错误"];
     } else if (type == TestTypeDismissAll) {

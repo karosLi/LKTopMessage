@@ -10,4 +10,3 @@
 
 NSString * const kLKTopMessageTextColorKey = @"kLKTopMessageTextColorKey";
 NSString * const kLKTopMessageBackgroundColorKey = @"kLKTopMessageBackgroundColorKey";
-NSString * const kLKTopMessageHeightKey = @"kLKTopMessageHeightKey";
